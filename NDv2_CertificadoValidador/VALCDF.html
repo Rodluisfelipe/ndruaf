@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Certificado de Defunción — ND 2.0</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+
+    body {
+      background: #dfe2e6;
+      font-family: 'Arimo', Arial, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a { color: inherit; }
+
+    /* ── Header ───────────────────────────────────────── */
+    .header {
+      background: #2c3a4d;
+      width: 100%;
+      flex-shrink: 0;
+    }
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 clamp(14px, 3vw, 28px);
+      display: flex;
+      align-items: center;
+      gap: clamp(14px, 3vw, 28px);
+      flex-wrap: wrap;
+      min-height: 96px;
+    }
+    .salud-box {
+      background: #ffffff;
+      border-radius: 6px;
+      padding: 8px 12px;
+      flex: none;
+      display: flex;
+    }
+    .salud-logo {
+      display: block;
+      height: clamp(56px, 9vw, 76px);
+      width: auto;
+    }
+    .brand-text {
+      display: flex;
+      align-items: center;
+      gap: clamp(8px, 2vw, 24px);
+      flex-wrap: wrap;
+    }
+    .brand-words {
+      font-family: 'Playfair Display', Georgia, serif;
+      line-height: 1.0;
+      color: #ffffff;
+      white-space: nowrap;
+    }
+    .brand-words .line1 {
+      font-weight: 700;
+      font-size: clamp(20px, 4vw, 34px);
+      display: block;
+    }
+    .brand-words .line2 {
+      font-weight: 700;
+      font-size: clamp(20px, 4vw, 34px);
+      display: block;
+    }
+    .brand-words .pink { color: #e6396a; }
+    .brand-nd {
+      font-family: 'Playfair Display', Georgia, serif;
+      display: flex;
+      align-items: flex-end;
+      line-height: .78;
+      white-space: nowrap;
+    }
+    .brand-nd .n {
+      font-size: clamp(48px, 9.5vw, 78px);
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: -.06em;
+    }
+    .brand-nd .d {
+      font-size: clamp(48px, 9.5vw, 78px);
+      font-weight: 800;
+      color: #e6396a;
+    }
+    .brand-nd .version {
+      font-size: clamp(15px, 2.4vw, 21px);
+      color: #ffffff;
+      font-weight: 700;
+      margin-bottom: 7px;
+      margin-left: 1px;
+    }
+
+    /* ── Main ─────────────────────────────────────────── */
+    .main {
+      flex: 1;
+      width: 100%;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: clamp(14px, 3vw, 28px) clamp(12px, 3vw, 22px);
+    }
+
+    .card {
+      background: #eceef0;
+      border-radius: 14px;
+      padding: clamp(22px, 5vw, 40px) clamp(20px, 5vw, 40px);
+    }
+
+    .cert-title {
+      margin: 0 0 clamp(20px, 4vw, 30px);
+      line-height: 1.14;
+      font-weight: 700;
+      font-size: clamp(30px, 7vw, 42px);
+      font-family: 'Arimo', Arial, sans-serif;
+    }
+    .cert-title .label { color: #e6396a; }
+    .cert-title .number { color: #4a9fd4; word-break: break-word; }
+
+    .fields {
+      display: grid;
+      gap: clamp(18px, 3.5vw, 26px);
+      grid-template-columns: 1fr;
+    }
+    .field {
+      margin: 0;
+      line-height: 1.28;
+      font-size: clamp(20px, 4.6vw, 26px);
+      word-break: break-word;
+    }
+    .field .field-label {
+      color: #2222c4;
+      font-weight: 700;
+    }
+    .field .field-value {
+      color: #1a1a1a;
+      font-weight: 500;
+    }
+
+    /* ── Footer ───────────────────────────────────────── */
+    .footer {
+      background: #3d5066;
+      color: #eef1f4;
+      width: 100%;
+      flex-shrink: 0;
+    }
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: clamp(20px, 3.5vw, 34px) clamp(16px, 4vw, 40px);
+      text-align: center;
+      font-size: clamp(14px, 2.2vw, 17px);
+      line-height: 1.6;
+    }
+    .footer-inner p { margin: 0 0 12px; }
+    .footer-inner p:last-child { margin-bottom: 0; }
+    .f-muted { color: #c6cdd6; }
+    .f-link { color: #7fb8ef; text-decoration: none; }
+    .f-link:hover { text-decoration: underline; }
+    .f-link-u { color: #7fb8ef; text-decoration: underline; }
+    .f-strong { color: #ffffff; font-weight: 700; }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="salud-box">
+        <img src="/project/assets/salud-logo.png" alt="Ministerio de Salud" class="salud-logo">
+      </div>
+      <div class="brand-text">
+        <div class="brand-words">
+          <span class="line1">Nacimientos</span>
+          <span class="line2">y <span class="pink">Defunciones</span></span>
+        </div>
+        <div class="brand-nd">
+          <span class="n">N</span><span class="d">D</span>
+          <span class="version">2.0</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Certificate card -->
+  <main class="main">
+    <section class="card">
+
+      <h1 class="cert-title">
+        <span class="label">Certificado de defunción: </span><span class="number" id="certNum">23069920279207</span>
+      </h1>
+
+      <div class="fields" id="fields">
+        <p class="field"><span class="field-label">Tipo de defunción: </span><span class="field-value">No fetal</span></p>
+        <p class="field"><span class="field-label">Fallecido: </span><span class="field-value">CC3267622 - ANA ISABEL GÓMEZ DE INFANTE</span></p>
+        <p class="field"><span class="field-label">Lugar de defunción: </span><span class="field-value">BOGOTÁ, D.C. - BOGOTÁ, D.C.</span></p>
+        <p class="field"><span class="field-label">Institución prestadora de servicio de salud: </span><span class="field-value">FUNDACION CARDIO INFANTIL INSTITUTO DE CARDIOLOGIA</span></p>
+        <p class="field"><span class="field-label">Estado de registro: </span><span class="field-value">Activo</span></p>
+        <p class="field"><span class="field-label">Fecha de registro: </span><span class="field-value">2026-06-20</span></p>
+        <p class="field"><span class="field-label">Fecha de impresión: </span><span class="field-value">2026-06-20 14:36</span></p>
+        <p class="field"><span class="field-label">Fecha de validación: </span><span class="field-value" id="fechaValidacion"></span></p>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <p>
+        <strong class="f-strong">Atención al usuario:</strong>
+        <span class="f-muted"> Teléfono en Bogotá D.C.</span>
+        <a href="tel:+5713305043" class="f-link">+57(1)330 5043</a>
+        <span class="f-muted">, en el resto del país</span>
+        <a href="tel:018000960020" class="f-link">018000 960020</a>
+      </p>
+      <p class="f-muted">Horario de lunes a viernes 7am a 6pm, sábados de 8am a 1pm jornada continua - Centro de Contacto al Ciudadano</p>
+      <p class="f-muted">Correo electrónico <a href="mailto:soportend@minsalud.gov.co" class="f-link-u">soportend@minsalud.gov.co</a> Centro de Contacto al Ciudadano</p>
+      <p class="f-strong">Versión - 1.0.0.0</p>
+      <p style="margin-top:6px" class="f-strong">Copyright © 2026 - Ministerio de Salud y Protección Social</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      // Fecha de validación dinámica: AÑO-MES-DÍA HORA:MIN
+      var d = new Date();
+      var p = function(n) { return String(n).padStart(2, '0'); };
+      document.getElementById('fechaValidacion').textContent =
+        d.getFullYear() + '-' + p(d.getMonth() + 1) + '-' + p(d.getDate()) +
+        ' ' + p(d.getHours()) + ':' + p(d.getMinutes());
+    })();
+  </script>
+
+</body>
+</html>
