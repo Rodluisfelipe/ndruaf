@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+  body{ background:#2f3e4f; font-family:'Arimo',Arial,sans-serif; }
+  input::placeholder{ color:#9aa0a6; }
+</style>
+</helmet>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#2f3e4f"/><text x="50" y="58" text-anchor="middle" font-family="Georgia,serif" font-weight="800" font-size="34"><tspan fill="#ffffff">N</tspan><tspan fill="#4a9fd4">D</tspan></text><circle cx="50" cy="74" r="3" fill="#e6396a"/></svg></template>
+<div style="min-height:100vh; background:#2f3e4f; display:flex; flex-direction:column;">
+
+  <!-- White brand bar -->
+  <header style="background:#ffffff; width:100%; border-bottom:3px solid #e4e7ea;">
+    <div style="max-width:1100px; margin:0 auto; padding:14px clamp(14px,4vw,28px);">
+      <div style="display:inline-flex; flex-direction:column;">
+        <img src="assets/salud-logo.png" alt="Ministerio de Salud" style="display:block; height:clamp(48px,8vw,64px); width:auto;">
+      </div>
+    </div>
+  </header>
+
+  <!-- Dark login section -->
+  <main style="flex:1; width:100%; max-width:760px; margin:0 auto; padding:0 clamp(16px,5vw,32px) clamp(28px,5vw,44px); display:flex; flex-direction:column;">
+
+    <!-- ND logo -->
+    <div style="padding:clamp(20px,5vw,36px) 0 clamp(8px,3vw,18px);">
+      <img src="assets/nd-logo.png" alt="Nacimientos y Defunciones 2.0" style="display:block; width:100%; max-width:560px; height:auto; margin:0 auto;">
+    </div>
+
+    <!-- Avatar divider -->
+    <div style="display:flex; align-items:center; gap:clamp(12px,3vw,22px); margin:clamp(18px,4vw,30px) 0 clamp(28px,6vw,46px);">
+      <span style="flex:1; height:2px; background:#7e8a97;"></span>
+      <span style="flex:none; width:clamp(60px,13vw,82px); height:clamp(60px,13vw,82px); border-radius:50%; background:#4a9fd4; display:flex; align-items:center; justify-content:center;">
+        <svg viewBox="0 0 24 24" width="58%" height="58%" fill="#ffffff" aria-hidden="true"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm0 2c-5 0-9 2.5-9 6v2h18v-2c0-3.5-4-6-9-6Z"/></svg>
+      </span>
+      <span style="flex:1; height:2px; background:#7e8a97;"></span>
+    </div>
+
+    <!-- Form -->
+    <form onSubmit="{{ onSubmit }}" style="display:flex; flex-direction:column; gap:clamp(16px,3vw,22px);">
+      <input type="text" placeholder="Nombre de usuario (Login)" style="width:100%; border:none; border-radius:7px; background:#ffffff; color:#2b2f36; font-size:clamp(16px,3.4vw,19px); padding:clamp(14px,3vw,18px) clamp(16px,3vw,20px); outline:none; font-family:inherit;">
+      <input type="password" placeholder="Diligencie su contraseña" style="width:100%; border:none; border-radius:7px; background:#ffffff; color:#2b2f36; font-size:clamp(16px,3.4vw,19px); padding:clamp(14px,3vw,18px) clamp(16px,3vw,20px); outline:none; font-family:inherit;">
+
+      <!-- Captcha -->
+      <div style="display:flex; flex-direction:column; align-items:center; gap:8px; margin:clamp(4px,1vw,8px) 0;">
+        <div style="width:100%; max-width:420px; height:clamp(90px,18vw,120px); border-radius:4px; background:#2b3744; display:flex; align-items:center; justify-content:center; overflow:hidden; position:relative;">
+          <div style="position:absolute; inset:0; background-image:radial-gradient(circle, rgba(255,255,255,.22) 1px, transparent 1.4px); background-size:7px 7px; opacity:.55;"></div>
+          <span style="position:relative; font-family:'Playfair Display',Georgia,serif; font-weight:800; font-size:clamp(40px,10vw,64px); letter-spacing:.18em; color:#3aa28f; text-shadow:0 2px 3px rgba(0,0,0,.4); transform:skewX(-4deg);">{{ captcha }}</span>
+        </div>
+        <a href="#" onClick="{{ onRefresh }}" style="color:#4a9fd4; font-size:clamp(15px,2.8vw,18px); text-decoration:underline;">Actualizar imagen</a>
+      </div>
+
+      <input type="text" placeholder="Ingrese el código de la imagen" style="width:100%; border:none; border-radius:7px; background:#ffffff; color:#2b2f36; font-size:clamp(16px,3.4vw,19px); padding:clamp(14px,3vw,18px) clamp(16px,3vw,20px); outline:none; font-family:inherit;">
+
+      <div style="height:2px; background:#7e8a97; margin:clamp(12px,3vw,22px) 0 clamp(8px,2vw,14px);"></div>
+
+      <button type="submit" style="width:100%; border:none; border-radius:7px; background:#3f86c4; color:#ffffff; font-size:clamp(18px,3.6vw,21px); font-weight:500; padding:clamp(15px,3vw,19px); cursor:pointer; font-family:inherit;">Iniciar Sesión</button>
+
+      <a href="#" style="text-align:center; color:#4a9fd4; font-size:clamp(16px,3.2vw,20px); text-decoration:underline; margin-top:clamp(4px,1vw,8px);">Olvidé mi clave - Recordar contraseña</a>
+    </form>
+  </main>
+
+  <!-- Footer -->
+  <footer style="background:#3d5066; color:#eef1f4; width:100%; margin-top:clamp(20px,4vw,32px);">
+    <div style="max-width:1100px; margin:0 auto; padding:clamp(20px,3.5vw,32px) clamp(16px,5vw,40px); text-align:center; font-size:clamp(13px,2.4vw,16px); line-height:1.55;">
+      <p style="margin:0 0 10px;"><strong style="color:#ffffff;">Atención al usuario:</strong> <span style="color:#c6cdd6;">Teléfono en Bogotá D.C.</span> <a href="tel:+6013305043" style="color:#7fb8ef; text-decoration:none;">+601 3305043</a><span style="color:#c6cdd6;">, en el resto del país</span> <a href="tel:018000960020" style="color:#7fb8ef; text-decoration:none;">018000 960020</a></p>
+      <p style="margin:0 0 10px; color:#c6cdd6;">Horario de lunes a viernes 7am a 6pm, sabados de 8am a 1pm jornada continua - Centro de Contacto al Ciudadano</p>
+      <p style="margin:0 0 16px; color:#c6cdd6;">Correo electrónico <a href="mailto:soportend@minsalud.gov.co" style="color:#7fb8ef; text-decoration:underline;">soportend@minsalud.gov.co</a> Centro de Contacto al Ciudadano</p>
+      <p style="margin:0; font-weight:700; color:#ffffff;">Versión - v2.0-2026.06.04.01</p>
+      <p style="margin:6px 0 0; font-weight:700; color:#ffffff;">Copyright © 2022 Ministerio de Salud y Protección Social</p>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  state = { captcha: 'V8PCX' };
+  gen() {
+    const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+    let s = '';
+    for (let i = 0; i < 5; i++) s += chars[Math.floor(Math.random() * chars.length)];
+    return s;
+  }
+  renderVals() {
+    return {
+      captcha: this.state.captcha,
+      onRefresh: (e) => { e.preventDefault(); this.setState({ captcha: this.gen() }); },
+      onSubmit: (e) => { e.preventDefault(); },
+    };
+  }
+}
+</script>
+</body>
+</html>

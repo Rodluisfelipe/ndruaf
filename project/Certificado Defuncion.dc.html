@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+  body{ background:#dfe2e6; font-family:'Arimo',Arial,sans-serif; }
+  a{ color:inherit; }
+</style>
+</helmet>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#2c3a4d"/><text x="50" y="58" text-anchor="middle" font-family="Georgia,serif" font-weight="800" font-size="34"><tspan fill="#ffffff">N</tspan><tspan fill="#4a9fd4">D</tspan></text><circle cx="50" cy="74" r="3" fill="#e6396a"/></svg></template>
+<div style="min-height:100vh; background:#dfe2e6; display:flex; flex-direction:column;">
+
+  <!-- Header / brand bar -->
+  <header style="background:#2c3a4d; width:100%;">
+    <div style="max-width:1100px; margin:0 auto; padding:0 clamp(14px,3vw,28px); display:flex; align-items:center; gap:clamp(14px,3vw,28px); flex-wrap:wrap; min-height:96px;">
+      <div style="background:#ffffff; border-radius:6px; padding:8px 12px; flex:none; display:flex;">
+        <img src="assets/salud-logo.png" alt="Ministerio de Salud" style="display:block; height:clamp(56px,9vw,76px); width:auto;">
+      </div>
+      <div style="display:flex; align-items:center; gap:clamp(8px,2vw,24px); flex-wrap:wrap;">
+        <div style="font-family:'Playfair Display',Georgia,serif; line-height:1.0; color:#ffffff; white-space:nowrap;">
+          <div style="font-weight:700; font-size:clamp(20px,4vw,34px);">Nacimientos</div>
+          <div style="font-weight:700; font-size:clamp(20px,4vw,34px);">y <span style="color:#e6396a;">Defunciones</span></div>
+        </div>
+        <div style="font-family:'Playfair Display',Georgia,serif; display:flex; align-items:flex-end; line-height:.78; white-space:nowrap;">
+          <span style="font-size:clamp(48px,9.5vw,78px); font-weight:800; color:#ffffff; letter-spacing:-.06em;">N</span><span style="font-size:clamp(48px,9.5vw,78px); font-weight:800; color:#e6396a;">D</span>
+          <span style="font-size:clamp(15px,2.4vw,21px); color:#ffffff; font-weight:700; margin-bottom:7px; margin-left:1px;">2.0</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Content -->
+  <main style="flex:1; width:100%; max-width:760px; margin:0 auto; padding:clamp(14px,3vw,28px) clamp(12px,3vw,22px);">
+    <section style="background:#eceef0; border-radius:14px; padding:clamp(22px,5vw,40px) clamp(20px,5vw,40px);">
+
+      <h1 style="margin:0 0 clamp(20px,4vw,30px); line-height:1.14; font-weight:700; font-size:clamp(30px,7vw,42px);">
+        <span style="color:#e6396a;">Certificado de defunción: </span><span style="color:#4a9fd4; word-break:break-word;">{{ certificado }}</span>
+      </h1>
+
+      <div style="display:grid; gap:clamp(18px,3.5vw,26px); grid-template-columns:1fr;">
+        <sc-for list="{{ campos }}" as="campo" hint-placeholder-count="8">
+          <p style="margin:0; line-height:1.28; font-size:clamp(20px,4.6vw,26px); word-break:break-word;"><span style="color:#2222c4; font-weight:700;">{{ campo.label }}: </span><span style="color:#1a1a1a; font-weight:500;">{{ campo.valor }}</span></p>
+        </sc-for>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer style="background:#3d5066; color:#eef1f4; width:100%;">
+    <div style="max-width:1100px; margin:0 auto; padding:clamp(20px,3.5vw,34px) clamp(16px,4vw,40px); text-align:center; font-size:clamp(14px,2.2vw,17px); line-height:1.6;">
+      <p style="margin:0 0 12px;"><strong style="color:#ffffff;">Atención al usuario:</strong> <span style="color:#c6cdd6;">Teléfono en Bogotá D.C.</span> <a href="tel:+5713305043" style="color:#7fb8ef; text-decoration:none;">+57(1)330 5043</a><span style="color:#c6cdd6;">, en el resto del país</span> <a href="tel:018000960020" style="color:#7fb8ef; text-decoration:none;">018000 960020</a></p>
+      <p style="margin:0 0 12px; color:#c6cdd6;">Horario de lunes a viernes 7am a 6pm, sábados de 8am a 1pm jornada continua - Centro de Contacto al Ciudadano</p>
+      <p style="margin:0 0 18px; color:#c6cdd6;">Correo electrónico <a href="mailto:soportend@minsalud.gov.co" style="color:#7fb8ef; text-decoration:underline;">soportend@minsalud.gov.co</a> Centro de Contacto al Ciudadano</p>
+      <p style="margin:0; font-weight:700; color:#ffffff;">Versión - 1.0.0.0</p>
+      <p style="margin:6px 0 0; font-weight:700; color:#ffffff;">Copyright © 2026 - Ministerio de Salud y Protección Social</p>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:820}}">
+class Component extends DCLogic {
+  fechaValidacion() {
+    const d = new Date();
+    const p = (n) => String(n).padStart(2, '0');
+    return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())} ${p(d.getHours())}:${p(d.getMinutes())}`;
+  }
+  renderVals() {
+    return {
+      certificado: this.props.certificado ?? '23069920279207',
+      campos: this.props.campos ?? [
+        { label: 'Tipo de defunción', valor: 'No fetal' },
+        { label: 'Fallecido', valor: 'CC3267622 - ANA ISABEL GÓMEZ DE INFANTE' },
+        { label: 'Lugar de defunción', valor: 'BOGOTÁ, D.C. - BOGOTÁ, D.C.' },
+        { label: 'Institución prestadora de servicio de salud', valor: 'FUNDACION CARDIO INFANTIL INSTITUTO DE CARDIOLOGIA' },
+        { label: 'Estado de registro', valor: 'Activo' },
+        { label: 'Fecha de registro', valor: '2026-06-20' },
+        { label: 'Fecha de impresión', valor: '2026-06-20 14:36' },
+        { label: 'Fecha de validación', valor: this.fechaValidacion() },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>
